@@ -1,11 +1,126 @@
-<p>Hello 大家好</p >
+<!DOCTYPE html>
+<html>
 
-<p>我是Lixin，这是我的简易简历。 </p >
+<head>
+    <title>Bootstrap 实例</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
 
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p >
+<body>
 
-<ul>
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 bg-success">①发型</div>
+                <div class="col-md-4 bg-warning" id="a1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 bg-success">②发色瞳色</div>
+                <div class="col-md-4 bg-warning" id="a2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 bg-success">③衣着</div>
+                <div class="col-md-4 bg-warning" id="a3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 bg-success">④元素1</div>
+                <div class="col-md-4 bg-warning" id="a4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 bg-success">④元素2</div>
+                <div class="col-md-4 bg-warning" id="a5"></div>
+            </div>
+        </div>
+    </div>
 
-<li> <a href=" ">知乎</a > </li>
+</body>
 
-<li> <https://user.qzone.qq.com/2690688423/main">我的QQ空间 还是一位未知复读的苦逼青年(已经不更细了,现在在知乎勉强度日)</a > </li>
+<script language="javascript">
+
+    var aa1Text = "双马尾，直发齐刘海，短发，短卷发，长卷发，丸子头，双丸子，马尾，长发";
+    var aa2Text = "红橙黄绿青蓝紫白黑粉";
+    var aa3Text = "CK，不良ck，蓝白校服，短裤，水手服，白色长裙，军装，潮服，斗篷，西装，连帽衫，衬衫，随意，女仆装，旗袍，护士服，巫师帽";
+    var aa4Text = "蕾丝，百褶，皮带，手套，兔耳，羊角，恶魔角，狐狸耳，鹿角，蝴蝶结，格子，条纹，围巾，纱，黑丝，白丝，流苏，眼镜，机械骨骼，独角，骨骼，触角，犬齿";
+    var aa5Text = "铃铛，眼球，骷髅，毛球球，蝴蝶，鹤，翅膀，羽毛，花，气球，指挥棒，伞，帽子，绷带，天使光圈，月亮，草莓，橘子，樱桃，书，灯，柠檬，鲸鱼，金鱼，红线，水晶，星辰，扑克，南瓜，鼓，时钟，甜筒，银杏，刀，剑，莲花，老烟枪，斧头，水母，相框";
+
+    var a1, a2, a3, a4, a5;
+
+    function randomGeneEle() {
+        console.log("开始随机生成元素");
+        splitText();
+        setValue();
+        console.log("随机生成元素借宿");
+    }
+
+    function setValue() {
+        var a1Value = a1[Math.floor(Math.random() * a1.length)];
+        $("#a1").html(a1Value)
+
+        var a2Value =  a2[Math.floor(Math.random() *  a2.length)];
+        $("#a2").html(a2Value)
+
+        var a3Value = a3[Math.floor(Math.random() * a3.length)];
+        $("#a3").html(a3Value)
+
+        var a4Value = a4[Math.floor(Math.random() * a4.length)];
+        $("#a4").html(a4Value)
+
+        var a5Value = a5[Math.floor(Math.random() * a5.length)];
+        $("#a5").html(a5Value)
+    }
+
+    function splitText() {
+        a1 = aa1Text.split("，")
+        a2 = aa2Text.split("")
+        a3 = aa3Text.split("，")
+        a4 = aa4Text.split("，")
+        a5 = aa5Text.split("，")
+
+        console.log(a1);
+        console.log(a2);
+        console.log(a3);
+        console.log(a4);
+        console.log(a5);
+    }
+
+    window.onload = randomGeneEle;
+
+</script>
+
+
+</html>
+
+
+<!-- 
+
+①发型
+双马尾，直发齐刘海，短发，短卷发，长卷发，
+(新增)
+丸子头，双丸子，马尾，长发，
+
+②发色瞳色
+红橙黄绿青蓝紫白黑粉
+
+③衣着
+CK,不良ck,蓝白校服，短裤，水手服，白色长裙，军装，潮服，斗篷，西装，连帽衫，衬衫，随意。
+(新增)
+女仆装，旗袍，护士服，巫师帽
+
+④元素1
+蕾丝，百褶，皮带，手套，兔耳，羊角，恶魔角，狐狸耳，鹿角，蝴蝶结，格子，条纹，围巾，纱，黑丝，白丝，流苏，眼镜，机械骨骼。
+(新增)
+独角，骨骼，触角，犬齿，
+
+
+⑤元素2
+铃铛，眼球，骷髅，毛球球，蝴蝶，鹤，翅膀，羽毛，花，气球，指挥棒，伞，帽子，绷带，天使光圈，月亮，草莓，橘子，樱桃，书，灯，柠檬，鲸鱼，金鱼，红线，水晶，星辰。
+
+(新增)
+扑克,南瓜，鼓，时钟，甜筒，银杏，刀，剑，莲花，老烟枪，斧头，水母，相框
+
+-->
